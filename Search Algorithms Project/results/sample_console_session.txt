@@ -1,0 +1,90 @@
+BFS, DFS and A* search demo
+    0123456789012345
+  0 ................
+  1 ................
+  2 ................
+  3 ..S.............
+  4 ................
+  5 ................
+  6 ................
+  7 ................
+  8 ............G...
+  9 ................
+S start   G goal   # wall   ~ mud (cost 5)   . open (cost 1)   : explored   o path
+
+ 1) Show map              6) Add or remove a wall
+ 2) Choose a sample map   7) Run one algorithm
+ 3) Load a map file       8) Compare all three
+ 4) Random map            9) Choose A* heuristic
+ 5) Set start and goal    0) Quit
+Choice: Sample maps:
+  1) Simple path
+  2) Obstacle filled
+  3) Multiple paths
+  4) Unreachable
+  5) Start equals goal
+Choice:     0123456789012345678901234
+  0 #########################
+  1 #.......~~~~~~~~~~......#
+  2 #.#####################.#
+  3 #.#####################.#
+  4 #.#####################.#
+  5 #S...~~~~~~~~~~~~~~~...G#
+  6 #.#####################.#
+  7 #.......................#
+  8 #########################
+
+ 1) Show map              6) Add or remove a wall
+ 2) Choose a sample map   7) Run one algorithm
+ 3) Load a map file       8) Compare all three
+ 4) Random map            9) Choose A* heuristic
+ 5) Set start and goal    0) Quit
+Choice: Algorithms:
+  1) BFS
+  2) DFS
+  3) A*
+Choice:     0123456789012345678901234
+  0 #########################
+  1 #.......~~~~~~~~~~......#
+  2 #.#####################.#
+  3 #:#####################.#
+  4 #:#####################.#
+  5 #S::::~~~~~~~~~~~~~~...G#
+  6 #o#####################o#
+  7 #ooooooooooooooooooooooo#
+  8 #########################
+Algorithm:      A*
+Goal reached:   Yes
+Nodes explored: 33
+Path length:    26 moves
+Path cost:      26
+Execution time: 0.092 ms
+Heuristic:      Manhattan
+Route updates:  0
+Path:           (5,1) -> (6,1) -> (7,1) -> (7,2) -> (7,3) -> (7,4) -> ... 15 more ... -> (7,20) -> (7,21) -> (7,22) -> (7,23) -> (6,23) -> (5,23)
+Goal reached in 26 moves at a cost of 26.
+
+ 1) Show map              6) Add or remove a wall
+ 2) Choose a sample map   7) Run one algorithm
+ 3) Load a map file       8) Compare all three
+ 4) Random map            9) Choose A* heuristic
+ 5) Set start and goal    0) Quit
+Choice: Metric                    BFS                        DFS             A*                            
+------------------------  -------------------------  --------------  ------------------------------
+Nodes explored            66                         31              33                            
+Path length (moves)       22                         30              26                            
+Path cost                 82                         70              26                            
+Execution time (ms)       0.097                      0.053           0.088                         
+Path found                Yes                        Yes             Yes                           
+Guarantees shortest path  Yes, for equal edge costs  No, in general  Yes, under suitable conditions
+A* heuristic: Manhattan
+- Fewest nodes explored: DFS (31).
+- Fewest moves: BFS (22). Lowest cost: A* (26).
+- BFS counts moves and ignores terrain, so its path crossed costlier ground than the one A* chose.
+
+ 1) Show map              6) Add or remove a wall
+ 2) Choose a sample map   7) Run one algorithm
+ 3) Load a map file       8) Compare all three
+ 4) Random map            9) Choose A* heuristic
+ 5) Set start and goal    0) Quit
+Choice: 
